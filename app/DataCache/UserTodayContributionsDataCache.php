@@ -21,8 +21,8 @@ class UserTodayContributionsDataCache extends AbstractDataCache
     {
         return GetTotalContributions::get(
             $this->username,
-            Carbon::now()->startOfDay(),
-            Carbon::now()->endOfDay(),
+            Carbon::now()->utc()->startOfDay(),
+            Carbon::now()->utc()->endOfDay(),
         );
     }
 
